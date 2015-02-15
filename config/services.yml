@@ -1,0 +1,18 @@
+services:
+    tlg.konu_onizleme.functions:
+        class: tlg\konu_onizleme\core\konu_onizleme
+        arguments:
+            - @config
+            - @template
+            - @user
+            - @request
+            - @dbal.conn
+            - %core.root_path%
+            - %core.php_ext%	
+    tlg.konu_onizleme.listener:
+        class: tlg\konu_onizleme\event\listener
+        arguments:
+            - @tlg.konu_onizleme.functions
+            - @config			
+        tags:
+            - { name: event.listener }

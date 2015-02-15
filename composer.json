@@ -1,0 +1,30 @@
+{
+	"name": "tlg/konu_onizleme",
+	"type": "phpbb-extension",
+	"description": "Display topic preview on viewforum page.",
+	"homepage": "https://github.com/golelcintolga/konu_onizleme",
+	"version": "1.0.0",
+	"time": "2015-02-15",
+		"keywords": ["phpbb", "extension", "topic", "preview"],
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "Tolga",
+			"username": "porsuk",
+			"email": "golelcintolga@gmail.com",
+			"homepage": "http://hayatbanaguzel.hol.es"
+			}],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "Konu Önizleme",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.2,<3.2.*@dev"
+      },
+		"version-check": {
+			"host": "golelcintolga.github.io",
+			"directory": "/konu_onizleme",
+			"filename": "versions.json"
+		}
+	}
+}

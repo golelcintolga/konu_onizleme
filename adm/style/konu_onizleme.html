@@ -1,0 +1,40 @@
+<!-- INCLUDE overall_header.html -->
+
+<a name="maincontent"></a>
+	<h1>{L_ACP_KONUONIZLEME}</h1>
+	<p>{L_ACP_KONUONIZLEME_EXPLAIN}</p>
+
+<form id="acp_tp" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_ACP_KONUONIZLEME_CONFIG}</legend>
+		<dl>
+			<dt><label for="tp_index">{L_TP_ENABLE}</label></dt>
+			<dd><input type="radio" class="radio" id="tp_index" name="tp_index" value="1" <!-- IF TP_INDEX -->checked="checked"<!-- ENDIF -->/> {L_ON} &nbsp; 
+				<input type="radio" class="radio" name="tp_index" value="0" <!-- IF not TP_INDEX -->checked="checked"<!-- ENDIF --> /> {L_OFF}</dd>
+		</dl>
+		<dl>
+			<dt><label for="tp_post">{L_TP_WHICH_POSTS}</label></dt>
+			<dd><input type="radio" class="radio" id="tp_post" name="tp_post" value="1" <!-- IF TP_POST == 1 -->checked="checked"<!-- ENDIF -->/> {L_TP_FIRST_POST} &nbsp; 
+				<input type="radio" class="radio" name="tp_post" value="2" <!-- IF TP_POST == 2 -->checked="checked"<!-- ENDIF --> /> {L_TP_LAST_POST}
+				<input type="radio" class="radio" name="tp_post" value="3" <!-- IF TP_POST == 3 -->checked="checked"<!-- ENDIF --> /> {L_TP_BOTH_POSTS}</dd>
+		</dl>		
+		<dl>
+			<dt><label for="tp_avatar_height">{L_TP_AVATAR}:</label><br /><span>{L_TP_AVATAR_EXPLAIN}</span></dt>
+			<dd><input class="tiny" name="tp_avatar_height" type="text" id="tp_avatar_height" value="{TP_AVATAR_HEIGHT}" maxlength="2" /></dd>
+		</dl>
+				<dl>
+			<dt><label for="tp_word_limit">{L_TP_CHARACTER_LIMIT}:</label><br /><span>{L_TP_CHARACTER_LIMIT_EXPLAIN}</span></dt>
+			<dd><input class="tiny" name="tp_word_limit" type="text" id="tp_word_limit" value="{TP_WORD_LIMIT}" maxlength="3" /></dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+			{S_FORM_TOKEN}
+		</p>
+	</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,38 @@
+<!-- IF KONUONIZLEME_DISPLAY -->
+<script>
+$('.tp_link').click(function(){
+	$(this).hide();
+	$(this).prev('.tp_ackapat').addClass('tp_load tp_spin').css('display','block');
+});
+
+$('.tp_ackapat').click(function(){
+	$(this).parents('li.row').next('.sonuc').toggle();
+	$(this).toggleClass('kapat');
+	return false;
+});
+
+phpbb.addAjaxCallback('konu_onizleme', function(konuonizleme) {
+				$(this).parents('li.row').after('<div class="sonuc"></div>');
+				var ekle = $(this).parents('li.row').next('.sonuc');
+				
+				var tekmesaj = konuonizleme.TEKMESAJ;
+				
+				if(tekmesaj == true){
+					ekle.append('<div id="'+konuonizleme.POST_ID+'" class="tp_tasiyici"><div class="tp_avatar">'+konuonizleme.AVATAR+'</div><div class="tp_mesaj"><b>{L_AUTHOR} :</b> '+konuonizleme.POST_AUTHOR+'<a href="'+konuonizleme.U_VIEW_POST+'" class="gopost">{L_TP_GOPOST}</a><p>'+konuonizleme.POST_TEXT+'</p></div></div>');
+				}else{
+					ekle.append('<div id="'+konuonizleme[0].POST_ID+'" class="tp_tasiyici">'+
+					'<div class="tp_avatar">'+konuonizleme[0].AVATAR+'</div>'+
+					'<div class="tp_mesaj"><b>{L_AUTHOR} :</b> '+ konuonizleme[0].POST_AUTHOR+'<a href="'+konuonizleme[0].U_VIEW_POST+'" class="gopost">{L_TP_GOPOST}</a><p>'+konuonizleme[0].POST_TEXT+'</p></div>'+
+					'</div>');
+					ekle.append('<hr />');
+					ekle.append('<div id="'+konuonizleme[1].POST_ID+'" class="tp_tasiyici">'+
+					'<div class="tp_avatar">'+konuonizleme[1].AVATAR+'</div>'+
+					'<div class="tp_mesaj"><b>{L_AUTHOR} :</b> '+ konuonizleme[1].POST_AUTHOR+'<a href="'+konuonizleme[1].U_VIEW_POST+'" class="gopost">{L_TP_GOPOST}</a><p>'+konuonizleme[1].POST_TEXT+'</p></div>'+
+					'</div>');
+				}
+				
+				$(this).prev('.tp_ackapat').removeClass('tp_load tp_spin');
+				$(this).remove();
+});
+</script>
+<!-- ENDIF -->

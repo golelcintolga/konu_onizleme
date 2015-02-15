@@ -1,0 +1,77 @@
+.topiclist.topics li.row dt .list-inner{ position:relative;}
+.tp_link {
+	background:url("./images/tp_icons.png") no-repeat left top;
+	position:absolute;
+	color:#F8FFFF;
+	height:16px;
+	width:16px;
+	right:2px;
+	top:-1px;
+	opacity:0.5;
+}
+.tp_link:hover{opacity:1;}
+.tp_ackapat{
+	background:url("./images/tp_icons.png") no-repeat right top;
+	position:absolute;
+	color:#F8FFFF;
+	height:16px;
+	width:16px;
+	right:2px;
+	top:-1px;
+	opacity:0.5;
+}
+.tp_ackapat:hover{ opacity:1; }
+.tp_ackapat.kapat{ background-position:-16px top; opacity:0.5; }
+.tp_ackapat.kapat:hover{ opacity:1; }
+
+.sonuc {
+	border:1px solid #e5e5e5;
+	background-color:#f5f5f5;
+}
+.sonuc hr { margin:0; padding:0;}
+.tp_tasiyici {
+    display: block;
+    padding: 5px;
+}
+.tp_avatar {
+    display: table-cell;
+    padding: 2px;
+}
+.tp_mesaj {
+    display: table-cell;
+    padding-left: 5px;
+    vertical-align: top;
+    width: 100% !important;
+}
+.tp_mesaj p { margin-top:5px; margin-bottom:0; padding-top: 5px; border-top:1px dashed #bfbfbf; }
+a.gopost {
+    background-color: #e5e5e5;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px #fff inset;
+    color: #6b6b6b;
+    display: inline-block;
+    padding: 3px 5px;
+	font-weight:bold;
+	margin-left:15px;
+}
+a.gopost:hover {
+    box-shadow: 0 -1px 1px #fff inset;
+    text-decoration: none;
+}
+.tp_ackapat.tp_load{
+	background:url("./images/refresh.png") no-repeat right top;
+
+}
+.tp_spin {
+    animation: 2s linear 0s normal none infinite running tp_spin;
+}
+
+@keyframes tp_spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
